@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function demo(){
+			/*alert("this is not correct")*/
+		var user=document.getElementById("username").value
+		var userCheck=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-z])(?=.*[@# !_]).{6,8}$/
+		/*var userCheck=/^[a-z][A-Z][0-9][ @#!_]{6,8}$/*/
+			console.log(user)
+		var male=document.getElementById("male")
+		var female=document.getElementById("female")
+			console.log(male.checked,female.checked)
+		if(user==""){
+			alert("username is not carrying the data")
+			return false
+		}
+		if(!user.match(userCheck)){
+			alert("username must uppercase,lowercase,digits & special characters")
+			return false
+		}
+		if(male.checked==false && female.checked==false){
+			alert("select your gender")
+			return false
+		}
+		return true
+		}
+
+	</script>
+</head>
+<body>
+  <form onsubmit="return demo()">
+  	<input type="text" id="username"/>
+  	<p>
+  		<input type="radio" id="male" name="gender" />Male
+  		<input type="radio" id="female" name="gender"/>Female
+  	</p>
+    <button>Submit</button>
+  </form>
+
+</body>
+</html>
